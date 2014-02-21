@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      body {
+        background: linear-gradient(#A101A6 0px, #E200A4 50px, #F16C97 80px, #FFFFFF 300px);
+      }
+    </style>
+    <script>
+      var height = 100;
+      window.setInterval(function() {
+        var home = document.getElementById("home");
+        home.style.height = (height + "px");
+        var span = document.getElementById("height");
+        span.textContent = (height + "px");
+        height += 1000;
+        if (height > 100000) {
+          height = 100;
+        }
+      }, 100);
+    </script>
+    <title>wat</title>
+  </head>
+
+  <body id="home">
+    <h1>I don't understand linear-gradient</h1>
+    <p>
+      Body height = <span id="height"></span>;
+    </p>
+    <p>
+    I am trying to apply a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">CSS linear-gradient()</a> to the background of the body tag.
+    </p>
+    <p>
+      Here is the CSS I'm using:
+      <pre id="code">
+      </pre>
+      <script>
+        document.getElementById("code").textContent = document.getElementsByTagName("style")[0].textContent;
+      </script>
+    </p>
+
+    <p>
+      The Syntax section in 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">MDN</a>
+      says that I can specify multiple stops for the gradient, and that the
+      color-stop can have a specific length.  Even though I specify a specific
+      length, it seems the gradient depends on the length of the body.
+    </p>
+    <ul>
+      <li>I specified absolute lengths for the gradient</li>
+      <li>I expect the gradient to stay stable regardless of page length</li>
+      <li>But the gradient seems to change</li>
+    </ul>
+    <p>
+      Am I doing something wrong, or is this a bug?
+    </p>
+  </body>
+</html>
